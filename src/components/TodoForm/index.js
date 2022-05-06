@@ -33,7 +33,7 @@ export const TodoForm = () => {
         <textarea
             value = {newTodoValue}
             onChange={onChange}
-            placeholder="La monda pelua"
+            placeholder="Your new task is..."
         />
         <div className="buttons">
             <button
