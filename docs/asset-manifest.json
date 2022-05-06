@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/check_task_app/static/css/main.10ab67f4.css",
+    "main.js": "/check_task_app/static/js/main.9babce8e.js",
+    "static/media/image2.svg": "/check_task_app/static/media/image2.5fed3681344134d83d03.svg",
+    "static/media/NoData.svg": "/check_task_app/static/media/NoData.fe143b19ee4be9ace29e.svg",
+    "index.html": "/check_task_app/index.html",
+    "main.10ab67f4.css.map": "/check_task_app/static/css/main.10ab67f4.css.map",
+    "main.9babce8e.js.map": "/check_task_app/static/js/main.9babce8e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.10ab67f4.css",
+    "static/js/main.9babce8e.js"
+  ]
+}
