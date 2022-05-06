@@ -1,0 +1,15 @@
+.EmptyTodo_Img{
+    background-image: url('/src/img/NoData.svg');
+    display: block; 
+     width: 50%;
+    height: 20%; 
+    background-size: 200px 200px;
+    position: absolute;
+    margin-left:130px;
+    margin-top: 100px; 
+}
+.EmptyTodo_Text{
+    color:#3f3d56;
+    font-weight: bold;
+    margin-top:90px
+} 

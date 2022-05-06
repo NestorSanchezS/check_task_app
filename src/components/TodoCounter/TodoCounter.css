@@ -1,0 +1,15 @@
+.todocounter {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.todocounter__title-h1{
+    font-size: 3.5rem;
+    color:#C1A3A3;
+}
+
+.todocounter__title-h2{
+    color:#886F6F
+}
+
+
