@@ -2,7 +2,7 @@ import React from 'react';
 
 import './TodoSearch.css';
 
-export const TodoSearch = ({searchValue, setSearchValue}) => {
+export const TodoSearch = ({searchValue, setSearchValue, loading}) => {
 
   const onSearchChange = (e) => {
   setSearchValue(e.target.value);
@@ -15,6 +15,7 @@ export const TodoSearch = ({searchValue, setSearchValue}) => {
       placeholder="Search your task"
       value={searchValue}
       onChange={onSearchChange}
+      disabled={loading}//Para que el buscador de TODO esté deshabilitado cuando loading sea true
       />
     </>
 

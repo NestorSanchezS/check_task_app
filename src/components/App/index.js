@@ -10,7 +10,7 @@ import { EmptyTodo } from '../EmptyTodo';
 import { TodoHeader } from '../TodoHeader';
 import { TodoCounter } from '../TodoCounter';
 import { TodoSearch } from '../TodoSearch';
-import { useTodos } from './useTodo';
+import { useTodos } from './useTodos';
 
 
 // import './App.css';
@@ -34,34 +34,55 @@ export const App = () => {
 
   return (
     <>
-          <TodoHeader/>
-
+        <TodoHeader loading = {loading}>
           <TodoCounter
-          totalTodos = {totalTodos}
-          completedTodos = {completedTodos}
+            totalTodos = {totalTodos}
+            completedTodos = {completedTodos}
+            // loading={loading}
           />
         
-        <TodoSearch
-          searchValue = {searchValue}
-          setSearchValue = {setSearchValue}
-        />
-        
+         <TodoSearch
+            searchValue = {searchValue}
+            setSearchValue = {setSearchValue}
+            // loading={loading}
+          />
+        </TodoHeader>
 
-          <TodoList>
-            {loading && <TodoLoading />}
-            {error && <TodoError error={error} /> }
-            {(!loading && !searchedTodos.length) && <EmptyTodo />}
-    
-            {searchedTodos.map(item =>(
-            <TodoItem 
-            key= {item.text} 
-            text={item.text}
-            completed={item.completed}
-            onComplete={() => completeTodo(item.text)}
-            onDelete={() => deleteTodo(item.text)}
-          />
-          ))}
+          
+        
+          <TodoList
+            error={error}
+            loading={loading}
+            searchedTodos = {searchedTodos}
+            totalTodos = {totalTodos}
+            searchValue = {searchValue}
+            onError = {() => <TodoError  />}
+            onLoading = {() => <TodoLoading />}
+            onEmptyTodo = {() => <EmptyTodo />}
+            onEmptySearchResults = {(searchValue) => <p>No hay resultados para {searchValue}</p>}
+            //  render={item =>(
+            //    <TodoItem 
+            //      key= {item.text} 
+            //      text={item.text}
+            //      completed={item.completed}
+            //      onComplete={() => completeTodo(item.text)}
+            //      onDelete={() => deleteTodo(item.text)}
+            //    />
+            //  )}
+          >
+            { item =>(
+              <TodoItem 
+                key= {item.text} 
+                text={item.text}
+                completed={item.completed}
+                onComplete={() => completeTodo(item.text)}
+                onDelete={() => deleteTodo(item.text)}
+              />
+            )} 
           </TodoList>
+            
+  
+  
   
         {!!openModal && (
           <Modal>

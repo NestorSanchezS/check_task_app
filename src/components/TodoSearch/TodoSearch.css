@@ -9,3 +9,7 @@
     box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
     text-align: center;
 }
+
+.todosearch:disabled{
+    opacity: 25%;
+}

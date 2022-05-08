@@ -3,14 +3,33 @@ import React from 'react'
 
 import './TodoList.css'
 
-export const TodoList = ({children}) => {
-
+export const TodoList = ({
+  error, 
+  onError, 
+  loading, 
+  onLoading, 
+  onEmptyTodo,
+  searchedTodos,
+  totalTodos, 
+  onEmptySearchResults,
+  searchValue,
+  render,
+  children
+}) => {
+   
+  const renderFun = children || render;
 
   return (
     <section>
-      <ul>
-        {children}
-      </ul>
+      
+        {error && onError()}
+        {loading && onLoading()}
+        {(!loading && !totalTodos) && onEmptyTodo()}
+        {(!!totalTodos && !searchedTodos.length) && onEmptySearchResults(searchValue)}
+
+        {searchedTodos.map(renderFun)}
+      
+      
     </section>
  
   )

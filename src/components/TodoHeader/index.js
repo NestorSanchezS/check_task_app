@@ -1,10 +1,12 @@
 import React from 'react'
 
 
-export const TodoHeader = ({children}) => {
+export const TodoHeader = ({children, loading}) => {
   return (
     <header>
-        {children}
+        {React.Children
+            .toArray(children)
+            .map(item => React.cloneElement(item, {loading}))}
     </header>
   )
 }
