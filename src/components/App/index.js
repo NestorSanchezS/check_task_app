@@ -11,6 +11,7 @@ import { TodoHeader } from '../TodoHeader';
 import { TodoCounter } from '../TodoCounter';
 import { TodoSearch } from '../TodoSearch';
 import { useTodos } from './useTodos';
+import { ChangeAlert } from '../ChangeAlert';
 
 
 // import './App.css';
@@ -30,6 +31,7 @@ export const App = () => {
     searchValue,
     setSearchValue,
     addTodo,
+    sincronize
   } = useTodos();
 
   return (
@@ -97,7 +99,10 @@ export const App = () => {
           setOpenModal = {setOpenModal}
           openModal = {openModal}
         />
-      
+
+        <ChangeAlert 
+          sincronize = {sincronize}
+        />
     </>
   )
 }

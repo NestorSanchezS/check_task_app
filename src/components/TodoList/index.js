@@ -27,7 +27,7 @@ export const TodoList = ({
         {(!loading && !totalTodos) && onEmptyTodo()}
         {(!!totalTodos && !searchedTodos.length) && onEmptySearchResults(searchValue)}
 
-        {searchedTodos.map(renderFun)}
+        {(!loading && !error) && searchedTodos.map(renderFun)}
       
       
     </section>

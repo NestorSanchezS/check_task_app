@@ -7,6 +7,7 @@ import { useLocalStorage } from '../../hooks/useLocalStorage'
     const {
       item: todos,
       saveItem: saveTodos,
+      sincronize,
       loading,
       error,
     } = useLocalStorage('TODOS_V1', []);
@@ -73,6 +74,7 @@ import { useLocalStorage } from '../../hooks/useLocalStorage'
             deleteTodo,
             openModal,
             setOpenModal,
+            sincronize
         }
     
 }
