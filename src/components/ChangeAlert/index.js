@@ -1,21 +1,21 @@
-import React from 'react'
-import { useStorageListener } from '../../hooks/useStorageListener';
+import React from "react";
+import { useStorageListener } from "../../hooks/useStorageListener";
 
-export const ChangeAlert = ({sincronize}) => {
+// import './ChangeAlert.css';
 
-const {show, toggleShow} = useStorageListener(sincronize);
+export const ChangeAlert = ({ sincronize }) => {
+  const { show, toggleShow } = useStorageListener(sincronize);
 
-    if(show){
-        return (
-            <div>
-                <p>Hubo cambios</p>
-                <button
-                    onClick={toggleShow}
-                >Refresh</button>
-            </div>
-        );
-    }else {
-       return null;
-    }
-  
-}
+  if (show) {
+    return (
+      <div className="container_changeAlert">
+        <p className="changeAlert_p">Hubo cambios</p>
+        <button className="changeAlert_button" onClick={toggleShow}>
+          Refresh
+        </button>
+      </div>
+    );
+  } else {
+    return null;
+  }
+};
